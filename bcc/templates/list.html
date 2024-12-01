@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Blog list</h1>
+    <ul>
+        {% for blog in blogs %}
+            <li>
+                <a href="{{ blog.id }}">{{blog.name}} {{blog.second_name}}</a>
+                <p>Age: {{ blog.age }}</p>
+                <p>Date: {{ blog.date }}</p>
+                {% if blog.photo %}
+                    <img src="{{ blog.photo.url }}" alt="Blog photo" style="width:100px">
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn4M5ZQyD12ekdUJZLzLBxOG1WX3Bopff-GQ&s" alt="">
+        
+    </div>
+</body>
+</html>
